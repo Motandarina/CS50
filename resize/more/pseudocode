@@ -1,0 +1,19 @@
+1、parameter check
+2、main part
+（1）n integer times larger：
+     a.copy one pixel to n* n
+        1st.prepare the larger bmp frame:header,pixels(),padding
+        2nd.no padding:for n hight,for n width
+     b.deal with padding
+     c.change header：
+        BITMAPFILEHEADER:bfSize
+        BITMAPINFOHEADER:biWidth
+（3）n between 0 to 1:
+     a.support 0.01
+     b.how to round
+     c.define the lower edge,3*3.if smaller than this cannot do,just to 3*3
+     d.
+
+
+（4）n larger than 1 and is float
+
