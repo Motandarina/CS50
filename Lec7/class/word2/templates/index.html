@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <h1>search</h1>
+    <form action="/search" method="post">
+        <input autofocus autocomplete="off" name="q" placeholder="name" type="text" >
+    </form>
+    <ul></ul>
+    <script>
+        let input = document.querySelector('input')
+        input.onkeyup=function(){
+            $.get("/search?q="+input.value,function(data){
+                let html=""
+                for(w of data)
+                {
+                    html += "<li>" + w + "</li>"
+                }
+                document.querySelector('ul').innerHTML= html;
+            });
+        };
+    </script>
+
+
+{% endblock %}
