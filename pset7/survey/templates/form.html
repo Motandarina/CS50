@@ -1,0 +1,184 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <!-- http://getbootstrap.com/docs/4.1/content/typography/ -->
+    <h1 class="mb-3">Form</h1>
+
+    <!-- http://getbootstrap.com/docs/4.1/components/forms/ -->
+
+    <div class="container">
+      <form action="/form" method="post"  novalidate class="needs-validation">
+        <!--class="needs-validation"-->
+        <div class="form-row">
+
+          <!--1 first name-->
+          <div class="col-md-4 mb-3">
+            <label for="validationCustom01">First name</label>
+            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First name" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+            <div class="invalid-feedback">
+              Please input a username.
+            </div>
+          </div>
+
+          <!--2Last name-->
+          <div class="col-md-4 mb-3">
+            <label for="validationCustom02">Last name</label>
+            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last name"  required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+            <div class="invalid-feedback">
+              Please input a username.
+            </div>
+          </div>
+
+          <!--3username-->
+          <div class="col-md-4 mb-3">
+            <label for="validationCustomUsername">Username</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupPrepend">@</span>
+              </div>
+              <input type="text" class="form-control" id="userName" name="userName" placeholder="Username" aria-describedby="inputGroupPrepend" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Please choose a username.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--4sex-->
+        <div class="form-row">
+            <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="sex" id="maleRadio" value="male" checked>
+                  <label class="form-check-label" for="exampleRadios1">
+                    male
+                  </label>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                  <div class="invalid-feedback">
+                    Please choose a username.
+                  </div>
+            </div>
+            <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="sex" id="femaleRadio" value="female">
+                  <label class="form-check-label" for="exampleRadios2">
+                    female
+                  </label>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                  <div class="invalid-feedback">
+                    Please choose a username.
+                  </div>
+            </div>
+         </div>
+
+
+        <div class="form-row">
+        <!--5 城市-->
+          <div class="col-md-6 mb-3">
+            <label for="validationCustom03">城市</label>
+            <input type="text" class="form-control" id="city" name="city" placeholder="City" required>
+            <div class="invalid-feedback">
+              Please provide a valid city.
+            </div>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+
+        <!--6 省份-->
+          <div class="col-md-3 mb-3">
+            <label for="validationCustom04">省份</label>
+            <input type="text" class="form-control" id="state" name="state" placeholder="State" required>
+            <div class="invalid-feedback">
+              Please provide a valid state.
+            </div>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+         <!--7 zip code-->
+          <div class="col-md-3 mb-3">
+            <label for="validationCustom05">Zip</label>
+            <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip" required>
+            <div class="invalid-feedback">
+              Please provide a valid zip.
+            </div>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+        </div>
+
+        <!--学历-->
+        <div class=form-row>
+        <div class="form-group col-md-3 mb-3">
+            <label for="exampleFormControlSelect1">学历</label>
+            <select class="form-control" id="education" name="education">
+              <option>专科</option>
+              <option>本科</option>
+              <option>硕士</option>
+              <option>博士</option>
+              <option>博士后</option>
+            </select>
+            <div class="invalid-feedback">
+              You must agree before submitting.
+            </div>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+        </div>
+        </div>
+        <!--agreement-->
+        <div class="form-group">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" name="agreementCheck" required>
+            <label class="form-check-label" for="invalidCheck">
+              Agree to terms and conditions
+            </label>
+            <div class="invalid-feedback">
+              You must agree before submitting.
+            </div>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+        </div>
+
+
+        <button class="btn btn-primary" type="submit">Submit form</button>
+      </form>
+    </div>
+
+      <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+      </script>
+
+{% endblock %}

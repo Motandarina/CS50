@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <!-- http://getbootstrap.com/docs/4.1/components/alerts/ -->
+    <table id="table" class="table">
+      <thead>
+        <tr>
+          <!--  <th scope="col">#</th>   -->
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">userName</th>
+          <th scope="col">sex</th>
+          <th scope="col">city</th>
+          <th scope="col">state</th>
+          <th scope="col">zip</th>
+          <th scope="col">education</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for line in info %}
+        <tr>
+          <!--  <th scope="row">{{ i }}</th>  -->
+          <td>{{ line[0] }}</td>
+          <td>{{ line[1] }}</td>
+          <td>{{ line[2] }}</td>
+          <td>{{ line[3] }}</td>
+          <td>{{ line[4] }}</td>
+          <td>{{ line[5] }}</td>
+          <td>{{ line[6] }}</td>
+          <td>{{ line[7] }}</td>
+        </tr>
+
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <script>
+      $(document).ready(function() {
+          $('#table').DataTable();
+      } );
+
+    </script>
+{% endblock %}
