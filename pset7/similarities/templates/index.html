@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <div class="col">
+        <form action="/compare" enctype="multipart/form-data" method="post">
+            <input name="file1" type="file"><br>
+            <input name="file2" type="file"><br>
+            <input name="algorithm" value="lines" type="radio">compare lines<br>
+            <input name="algorithm" value="sentences" type="radio">compare sentences<br>
+            <input name="algorithm" id="substrings" value="substrings" type="radio">compare substrings<br>
+            <input name="length" id="length"  style='display:none;' type="number" min="1" placeholder="of length n"><br>
+            <button id="submit" type="submit">compare</button>
+        </form>
+    </div>
+     <!--(d)Using jQuery only -->
+     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="/static/less/script.js" type="text/javascript"></script>
+
+{% endblock %}

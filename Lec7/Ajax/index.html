@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Ajax</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" type="text/javascript"></script>
+    <script src="js/ajax.js" type="text/javascript"></script>
+    <!--link href="css/div.css" rel="stylesheet" /-->
+</head>
+<body>
+    <h2>Ajax Test</h2>
+    <div id='infodiv'>
+        Information goes here
+    </div>
+    <div>
+        <form>
+            <select name="staff" onchange="cs50Info(this.value);">
+                <option value="">Select someone:</option>
+                <option value="mei">梅花</option>
+                <option value="lan">兰花</option>
+                <option value="zhu">竹子</option>
+                <option value="ju">菊花</option>
+            </select>
+        </form>
+    </div>
+</body>

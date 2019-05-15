@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    HOME
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>TOTAL</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td colspan="4"></td>
+                <td>{{ total }}</td>
+            </tr>
+        </tfoot>
+        <tbody>
+            {% for item in infos %}
+                <tr>
+                    <td>{{ item['symbol'] }}</td>
+                    <td>{{ item['name'] }}</td>
+                    <td>{{ item['shares'] }}</td>
+                    <td>{{ item['prices'] }}</td>
+                    <td>{{ item['stock_cash'] }}</td>
+                </tr>
+            {% endfor%}
+
+            <tr>
+                <td colspan="4">CASH</td>
+                <td>{{ cash[0]['cash'] }}</td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}
