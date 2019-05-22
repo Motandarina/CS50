@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <title>store</title>
+    </head>
+
+    <body>
+       <form id="myForm" >
+           <input type="text" id="name"/>
+           <input type="submit" id="submit" />
+
+
+       </form>
+    </body>
+    <script>
+
+        document.getElementById("myForm").onsubmit=function(){
+           let name=document.getElementById("name").value
+           //1.
+           //alert(`Hello, ${name}`);
+           //2.
+           alert("Hello, "+ name)
+           //3.
+           //alert("Hello, "+ document.getElementById("name").value )
+        };
+            //4.
+            //function greet(){
+            //     alert("Hello World!");
+            //    }
+
+            //document.getElementById("myForm").onsubmit=greet
+            //5.
+        // document.getElementById("myForm").onsubmit=alert("Hello World!");
+    </script>
+</html>

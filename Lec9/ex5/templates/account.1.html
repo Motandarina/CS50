@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Account
+{% endblock %}
+
+{% block main %}
+    <form id="myForm" action="/account" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" value="{{ session.user_name }}" id="username" name="username" placeholder="Username" type="text">
+            <div id="text"></div>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password1" placeholder="Password" type="password">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password2" placeholder="New Password" type="password">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password3" placeholder="Retype New Password" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit"  id="submit">confirm</button>
+    </form>
+    <javascript>
+    <script>
+        let input=document.querySelector("#username");
+        let submit=document.getElementById('submit');
+        let text=document.querySelector("#text");
+        function pv(event) {
+        	event.preventDefault();
+            }
+        input.onkeyup=function(){
+            $.get('/check?username=' + input.value, function(data){
+            if(data[0][input.value]){
+                text.innerHTML="username valid";
+                submit.removeEventListener("click", pv);
+            }
+            else{
+                text.innerHTML="username not valid";
+                submit.addEventListener("click", pv);
+            }
+
+            }
+
+            );
+        };
+
+    </script>
+
+
+{% endblock %}

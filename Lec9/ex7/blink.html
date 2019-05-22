@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>blink</title>
+    </head>
+    <body>
+        <div id="div">
+            Hello world!
+        </div>
+        <script>
+            function blink(){
+                div=document.getElementById("div");
+                if( div.style.visibility=="hidden" )
+                {
+                    div.style.visibility="visible"
+                }
+                else
+                {
+                    div.style.visibility="hidden"
+                }
+            }
+            window.setInterval(blink,1000);
+
+
+        </script>
+    </body>
+</html>
